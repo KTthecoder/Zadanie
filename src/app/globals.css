@@ -2,26 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.clipPath{
+    clip-path: inset(0 0 0 25% round 35% 0% 0 35%);
+    background-color: hsl(231, 69%, 60%);
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    z-index: -1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.clipPathFeatures{
+    clip-path: inset(0 25% 0 0 round 0% 35% 35% 0%);
+    background-color: hsl(231, 69%, 60%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.svg{
+    fill: white;
+    transition: all ease-in-out 0.2s;
+}
+
+.featureBlockShadow{
+    -webkit-box-shadow: 0px 11px 25px -3px rgba(175, 175, 183, 1);
+    -moz-box-shadow: 0px 11px 25px -3px rgba(175, 175, 183, 1);
+    box-shadow: 0px 11px 25px -3px rgba(175, 175, 183, 1);
+}
+
+.btnShadow{
+    -webkit-box-shadow: 0px 8px 17px -3px rgba(175, 175, 183, 1);
+    -moz-box-shadow: 0px 8px 17px -3px rgba(175, 175, 183, 1);
+    box-shadow: 0px 8px 17px -3px rgba(175, 175, 183, 1);
+}
+
+@media(min-width: 768px){
+    .clipPath{
+        height: 200px;
+        width: 40%;
+        bottom: -30px;
+    }
+
+    .clipPathFeatures{
+        height: 200px;
+        width: 45%;
+        bottom: -30px
+    }
+
+    .transition{
+        transition: all ease-in-out 0.28s;
+    }
+
+    .transitionText{
+        transition: all ease-in-out 0.22s;
+    }
+
+    .svg:hover{
+        fill: #FA5757;
+        transition: all ease-in-out 0.2s;
+    }
+}
+
+@media(min-width: 1024px){
+    .clipPath{
+        height: 300px;
+        width: 48%;
+        bottom: -30px;
+        max-width: 830px;
+    }
+
+    .clipPathFeatures{
+        height: 300px;
+        width: 52%;
+        bottom: -30px;
+        max-width: 1100px;
+    }
 }
